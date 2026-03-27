@@ -1,0 +1,15 @@
+{
+  "resources": [
+    {"pattern": "io/spring/javaformat/cli/version.properties"},
+    {"pattern": "io/spring/javaformat/formatter/eclipse/formatter.prefs"},
+    {"pattern": "io/spring/javaformat/eclipse/jdt/jdk17/.*\\.rsc"},
+    {"pattern": "io/spring/javaformat/eclipse/jdt/jdk17/.*\\.props"},
+    {"pattern": "io/spring/javaformat/eclipse/jdt/jdk17/.*\\.properties"},
+    {"pattern": "io/spring/javaformat/cli/check/checkstyle.xml"},
+    {"pattern": "io/spring/javaformat/checkstyle/.*\\.xml"},
+    {"pattern": "io/spring/javaformat/checkstyle/.*\\.txt"},
+    {"pattern": "io/spring/javaformat/checkstyle/.*\\.properties"},
+    {"pattern": "com/puppycrawl/tools/checkstyle/.*\\.dtd"},
+    {"pattern": "com/puppycrawl/tools/checkstyle/.*\\.properties"}
+  ]
+}

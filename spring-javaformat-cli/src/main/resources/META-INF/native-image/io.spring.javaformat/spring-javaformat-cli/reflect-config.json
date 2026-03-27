@@ -1,0 +1,433 @@
+[
+  {"name": "java.util.Date[]", "unsafeAllocated": true},
+  {"name": "java.util.Calendar[]", "unsafeAllocated": true},
+  {"name": "java.sql.Date[]", "unsafeAllocated": true},
+  {"name": "java.sql.Time[]", "unsafeAllocated": true},
+  {"name": "java.sql.Timestamp[]", "unsafeAllocated": true},
+  {"name": "java.math.BigDecimal[]", "unsafeAllocated": true},
+  {"name": "java.math.BigInteger[]", "unsafeAllocated": true},
+  {"name": "java.net.URI[]", "unsafeAllocated": true},
+  {"name": "java.net.URL[]", "unsafeAllocated": true},
+  {"name": "java.time.LocalDate[]", "unsafeAllocated": true},
+  {"name": "java.time.LocalTime[]", "unsafeAllocated": true},
+  {"name": "java.time.LocalDateTime[]", "unsafeAllocated": true},
+  {"name": "java.time.ZonedDateTime[]", "unsafeAllocated": true},
+  {"name": "java.time.OffsetDateTime[]", "unsafeAllocated": true},
+  {"name": "java.time.OffsetTime[]", "unsafeAllocated": true},
+  {"name": "java.time.Instant[]", "unsafeAllocated": true},
+  {"name": "java.time.Duration[]", "unsafeAllocated": true},
+  {"name": "java.time.Period[]", "unsafeAllocated": true},
+  {"name": "java.util.UUID[]", "unsafeAllocated": true},
+  {"name": "java.lang.Boolean[]", "unsafeAllocated": true},
+  {"name": "java.lang.Integer[]", "unsafeAllocated": true},
+  {"name": "java.lang.Long[]", "unsafeAllocated": true},
+  {"name": "java.lang.Double[]", "unsafeAllocated": true},
+  {"name": "java.lang.Float[]", "unsafeAllocated": true},
+  {"name": "java.lang.Byte[]", "unsafeAllocated": true},
+  {"name": "java.lang.Short[]", "unsafeAllocated": true},
+  {"name": "java.lang.Character[]", "unsafeAllocated": true},
+  {"name": "java.lang.Number[]", "unsafeAllocated": true},
+  {"name": "java.lang.String[]", "unsafeAllocated": true},
+  {
+    "name": "io.spring.javaformat.eclipse.jdt.jdk17.internal.formatter.DefaultCodeFormatter",
+    "fields": [
+      {"name": "astRoot"},
+      {"name": "tokenManager"}
+    ]
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.api.TokenTypes",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.api.AutomaticBean",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.api.AbstractViolationReporter",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.api.AbstractFileSetCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.api.AbstractCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.Checker",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.TreeWalker",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.SpringChecks",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringHeaderCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringTestFileNameCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringAnnotationLocationCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringAnnotationAttributeConciseValueCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringHideUtilityClassConstructor",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringImportOrderCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringNoWhitespaceBeforeCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringAvoidStaticImportCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringLambdaCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringTernaryCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringCatchCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringJavadocCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringLeadingWhitespaceCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringMethodOrderCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringMethodVisibilityCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringNullabilityCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "io.spring.javaformat.checkstyle.check.SpringParenPadCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocPackageCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.annotation.AnnotationUseStyleCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.annotation.MissingOverrideCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.annotation.MissingDeprecatedCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.annotation.PackageAnnotationCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.blocks.EmptyBlockCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.blocks.LeftCurlyCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.blocks.RightCurlyCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.blocks.NeedBracesCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.blocks.AvoidNestedBlocksCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.design.FinalClassCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.design.InterfaceIsTypeCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.design.MutableExceptionCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.design.InnerTypeLastCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.design.OneTopLevelClassCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.CovariantEqualsCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.EmptyStatementCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.EqualsHashCodeCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.InnerAssignmentCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.SimplifyBooleanExpressionCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.SimplifyBooleanReturnCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.StringLiteralEqualityCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.NestedForDepthCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.NestedIfDepthCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.NestedTryDepthCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.MultipleVariableDeclarationsCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.RequireThisCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.OneStatementPerLineCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.coding.UnnecessarySemicolonInEnumerationCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.imports.RedundantImportCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTypeCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocMethodCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocVariableCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocStyleCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.javadoc.NonEmptyAtclauseDescriptionCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.javadoc.JavadocTagContinuationIndentationCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.javadoc.AtclauseOrderCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.UpperEllCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.ArrayTypeStyleCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.OuterTypeFilenameCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.modifier.RedundantModifierCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.modifier.ModifierOrderCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.regexp.RegexpSinglelineJavaCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.regexp.RegexpCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.whitespace.GenericWhitespaceCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.whitespace.MethodParamPadCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.whitespace.NoWhitespaceAfterCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.whitespace.TypecastParenPadCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "name": "com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAroundCheck",
+    "allDeclaredConstructors": true,
+    "allDeclaredMethods": true
+  }
+]
