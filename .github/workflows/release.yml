@@ -8,6 +8,8 @@ on:
         description: Environment
         type: environment
         required: true
+permissions:
+  contents: write
 jobs:
   stage:
     name: Stage
@@ -49,9 +51,19 @@ jobs:
     outputs:
       release-version: ${{ steps.deduce-versions.outputs.release-version }}
       release-build-number: ${{ github.run_number }}
+  prepare-cli-native-release:
+    name: Prepare CLI Native Release
+    needs: stage
+    uses: ./.github/workflows/prepare-cli-native-release.yml
+    with:
+      version: ${{ needs.stage.outputs.release-version }}
+    secrets:
+      gh-token: ${{ secrets.GH_ACTIONS_REPO_TOKEN }}
   promote:
     name: Promote
-    needs: stage
+    needs:
+    - stage
+    - prepare-cli-native-release
     uses: ./.github/workflows/promote.yml
     with:
       environment: ${{ inputs.environment }}

@@ -1,0 +1,15 @@
+name: 'Setup Native'
+runs:
+  using: composite
+  steps:
+  - name: Set Up GraalVM
+    uses: graalvm/setup-graalvm@v1
+    with:
+      distribution: liberica
+      java-version: '17'
+      cache: maven
+      components: native-image
+      github-token: ${{ github.token }}
+  - name: Disable Java Problem Matcher
+    shell: bash
+    run: echo "::remove-matcher owner=java::"

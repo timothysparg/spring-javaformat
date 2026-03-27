@@ -85,7 +85,7 @@ jobs:
         build-number: ${{ inputs.build-number }}
         artifactory-username: ${{ secrets.ARTIFACTORY_USERNAME }}
         artifactory-password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-    - name: Create GitHub Release
+    - name: Publish GitHub Release
       uses: ./.github/actions/create-github-release
       with:
         milestone: ${{ inputs.version }}

@@ -14,3 +14,14 @@ jobs:
       uses: ./.github/actions/setup
     - name: Build
       run: ./mvnw clean install --batch-mode --no-transfer-progress --update-snapshots
+  build-cli-native:
+    name: Build CLI Native
+    runs-on: ubuntu-latest
+    if: ${{ github.repository == 'spring-io/spring-javaformat' }}
+    steps:
+    - name: Check Out
+      uses: actions/checkout@v4
+    - name: Set Up Native
+      uses: ./.github/actions/setup-native
+    - name: Build CLI Native
+      run: ./mvnw -pl spring-javaformat-cli -am -Pnative package --batch-mode --no-transfer-progress --update-snapshots
