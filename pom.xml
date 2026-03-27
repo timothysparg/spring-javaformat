@@ -48,8 +48,12 @@
 		<mockito.version>3.6.28</mockito.version>
 		<junit.version>5.8.1</junit.version>
 		<javassist.version>3.21.0-GA</javassist.version>
+		<jspecify.version>1.0.0</jspecify.version>
 		<picocontainer.version>1.2</picocontainer.version>
+		<picocli.version>4.7.7</picocli.version>
 		<plexus-utils.version>3.5.1</plexus-utils.version>
+		<spring-boot.version>2.7.18</spring-boot.version>
+		<spring-native.version>0.12.2</spring-native.version>
 		<system-rules.version>1.16.0</system-rules.version>
 		<testcontainers.version>1.16.0</testcontainers.version>
 		<trove4j.version>3.0.3</trove4j.version>
@@ -180,6 +184,16 @@
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
 					<version>3.2.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-maven-plugin</artifactId>
+					<version>${spring-boot.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.springframework.experimental</groupId>
+					<artifactId>spring-aot-maven-plugin</artifactId>
+					<version>${spring-native.version}</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -496,6 +510,11 @@
 				<version>${log4j.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>org.jspecify</groupId>
+				<artifactId>jspecify</artifactId>
+				<version>${jspecify.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.junit</groupId>
 				<artifactId>junit-bom</artifactId>
 				<version>5.8.1</version>
@@ -559,9 +578,19 @@
 				<version>${picocontainer.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>info.picocli</groupId>
+				<artifactId>picocli-spring-boot-starter</artifactId>
+				<version>${picocli.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.codehaus.plexus</groupId>
 				<artifactId>plexus-utils</artifactId>
 				<version>${plexus-utils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.experimental</groupId>
+				<artifactId>spring-native</artifactId>
+				<version>${spring-native.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.testcontainers</groupId>
@@ -595,6 +624,7 @@
 	</dependencies>
 	<modules>
 		<module>spring-javaformat</module>
+		<module>spring-javaformat-cli</module>
 		<module>spring-javaformat-eclipse</module>
 		<module>spring-javaformat-gradle</module>
 		<module>spring-javaformat-intellij-idea</module>
