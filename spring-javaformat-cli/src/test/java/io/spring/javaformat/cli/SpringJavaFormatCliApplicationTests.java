@@ -47,7 +47,7 @@ class SpringJavaFormatCliApplicationTests {
 		StringWriter out = new StringWriter();
 		int exitCode = new CommandLine(this.command, this.factory).setOut(new PrintWriter(out)).execute("--help");
 		assertThat(exitCode).isZero();
-		assertThat(out.toString()).contains("Usage: spring-javaformat");
+		assertThat(out.toString()).contains("Usage: spring-javaformat").contains("apply").contains("check");
 	}
 
 	@Test
