@@ -1,0 +1,45 @@
+name: Prepare CLI Native Release
+on:
+  workflow_call:
+    inputs:
+      version:
+        type: string
+        required: true
+    secrets:
+      gh-token:
+        required: true
+permissions:
+  contents: write
+jobs:
+  create-draft-release:
+    name: Create Draft GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check Out
+      uses: actions/checkout@v4
+    - name: Create Draft GitHub Release
+      env:
+        GH_TOKEN: ${{ secrets.gh-token }}
+      shell: bash
+      run: gh release create ${{ format('v{0}', inputs.version) }} --draft --verify-tag --notes "Draft release"
+  build:
+    name: Build
+    needs: create-draft-release
+    uses: ./.github/workflows/build-cli-native.yml
+  upload-assets:
+    name: Upload Assets
+    needs:
+    - create-draft-release
+    - build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download Native Artifacts
+      uses: actions/download-artifact@v4
+      with:
+        pattern: spring-javaformat-*
+        path: native-artifacts
+        merge-multiple: true
+    - name: Upload Assets to Draft Release
+      env:
+        GH_TOKEN: ${{ secrets.gh-token }}
+      run: gh release upload ${{ format('v{0}', inputs.version) }} native-artifacts/* --clobber --repo ${{ github.repository }}
