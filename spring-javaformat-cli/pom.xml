@@ -14,6 +14,7 @@
 		<maven.compiler.source>17</maven.compiler.source>
 		<maven.compiler.target>17</maven.compiler.target>
 		<java.version>17</java.version>
+		<jte.version>3.2.3</jte.version>
 	</properties>
 
 	<dependencyManagement>
@@ -71,6 +72,17 @@
 		<dependency>
 			<groupId>org.codehaus.plexus</groupId>
 			<artifactId>plexus-utils</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>gg.jte</groupId>
+			<artifactId>jte-runtime</artifactId>
+			<version>${jte.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>gg.jte</groupId>
+			<artifactId>jte-models</artifactId>
+			<version>${jte.version}</version>
 		</dependency>
 
 		<!-- Test -->
@@ -139,6 +151,41 @@
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>gg.jte</groupId>
+				<artifactId>jte-maven-plugin</artifactId>
+				<version>${jte.version}</version>
+				<configuration>
+					<sourceDirectory>${project.basedir}/src/main/jte</sourceDirectory>
+					<contentType>Plain</contentType>
+					<extensions>
+						<extension>
+							<className>gg.jte.models.generator.ModelExtension</className>
+							<settings>
+								<interfaceAnnotation>@org.jspecify.annotations.NullMarked</interfaceAnnotation>
+								<implementationAnnotation>@org.jspecify.annotations.NullMarked</implementationAnnotation>
+								<language>Java</language>
+							</settings>
+						</extension>
+					</extensions>
+				</configuration>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>gg.jte</groupId>
+						<artifactId>jte-models</artifactId>
+						<version>${jte.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 			<plugin>
 				<groupId>org.springframework.experimental</groupId>
