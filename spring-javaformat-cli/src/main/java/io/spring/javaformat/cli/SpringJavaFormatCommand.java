@@ -21,6 +21,8 @@ import picocli.CommandLine.Command;
 import picocli.CommandLine.Model.CommandSpec;
 import picocli.CommandLine.Spec;
 
+import io.spring.javaformat.cli.format.ApplyCommand;
+
 /**
  * Root picocli command.
  *
@@ -28,6 +30,7 @@ import picocli.CommandLine.Spec;
  */
 @Component
 @Command(name = "spring-javaformat", mixinStandardHelpOptions = true, versionProvider = CliVersionProvider.class,
+		subcommands = { ApplyCommand.class },
 		description = "Formats and checks Java source files")
 @PicocliManaged
 class SpringJavaFormatCommand implements Runnable {
