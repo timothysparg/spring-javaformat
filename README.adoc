@@ -2,8 +2,6 @@
 :checkstyle-version: 9.3
 == Spring Java Format
 
-
-
 === What is This?
 A set of plugins that can be applied to any Java project to provide a consistent "`Spring`" style.
 The set currently consists of:
