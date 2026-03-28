@@ -36,6 +36,7 @@ jobs:
         release-version: ${{ steps.deduce-versions.outputs.release-version }}
         next-version: ${{ steps.deduce-versions.outputs.next-version }}
     - name: Deploy to Staging
+      if: ${{ github.repository == 'spring-io/spring-javaformat' }}
       uses: spring-io/artifactory-deploy-action@v0.0.1
       with:
         folder: distribution-repository
@@ -58,7 +59,7 @@ jobs:
     with:
       version: ${{ needs.stage.outputs.release-version }}
     secrets:
-      gh-token: ${{ secrets.GH_ACTIONS_REPO_TOKEN }}
+      gh-token: ${{ secrets.GH_ACTIONS_REPO_TOKEN || github.token }}
   promote:
     name: Promote
     needs:
