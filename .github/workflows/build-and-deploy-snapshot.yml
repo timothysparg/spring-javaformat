@@ -2,14 +2,13 @@ name: Build and Deploy Snapshot
 on:
   push:
     branches:
-      - main
+      - test-ci
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 jobs:
   build-and-deploy-snapshot:
     name: Build and Deploy Snapshot
     runs-on: ubuntu-latest
-    if: ${{ github.repository == 'spring-io/spring-javaformat' }}
     steps:
     - name: Check Out
       uses: actions/checkout@v4
@@ -18,6 +17,7 @@ jobs:
     - name: Build
       run: ./mvnw clean deploy --batch-mode --no-transfer-progress --update-snapshots -DaltDeploymentRepository=distribution::file://$(pwd)/distribution-repository
     - name: Deploy
+      if: ${{ github.repository == 'spring-io/spring-javaformat' }}
       uses: spring-io/artifactory-deploy-action@v0.0.1
       with:
         folder: 'distribution-repository'
