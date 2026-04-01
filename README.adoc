@@ -2,8 +2,6 @@
 :checkstyle-version: 9.3
 == Spring Java Format
 
-
-
 === What is This?
 A set of plugins that can be applied to any Java project to provide a consistent "`Spring`" style.
 The set currently consists of:
@@ -208,6 +206,53 @@ springJavaFormat {
 	}
 }
 ----
+
+
+
+=== CLI
+The CLI provides formatting and checking support without requiring Maven or Gradle integration.
+
+WARNING: The CLI is experimental and not yet considered a stable interface.
+
+==== Download
+Native binaries for Linux, Windows, and macOS are published as assets on the corresponding https://github.com/spring-io/spring-javaformat/releases[GitHub release].
+
+==== Usage
+[source,shell]
+----
+spring-javaformat --help
+----
+
+The CLI provides the following commands:
+
+* `apply` formats Java source files in place
+* `validate` checks formatting without modifying files
+* `check` runs Spring style checks
+
+==== Examples
+Format sources in the current project:
+
+[source,shell]
+----
+spring-javaformat apply .
+----
+
+Validate formatting:
+
+[source,shell]
+----
+spring-javaformat validate .
+----
+
+Run style checks:
+
+[source,shell]
+----
+spring-javaformat check .
+----
+
+==== Configuration
+The `apply` and `validate` commands honor `.springjavaformatconfig`.
 
 
 

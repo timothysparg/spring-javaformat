@@ -39,3 +39,10 @@ jobs:
         build_name=${{ format('spring-javaformat-{0}', inputs.version)}}
         build_number=${{ inputs.build-number }}
         jf rt delete --build ${build_name}/${build_number}
+    - name: Delete Draft GitHub Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GH_ACTIONS_REPO_TOKEN }}
+      run: |
+        if gh release view ${{ format('v{0}', inputs.version) }} > /dev/null 2>&1; then
+          gh release delete ${{ format('v{0}', inputs.version) }} --yes --cleanup-tag
+        fi

@@ -1,0 +1,64 @@
+name: Build CLI Native
+on:
+  workflow_call:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    name: Build (${{ matrix.name }})
+    runs-on: ${{ matrix.runs-on }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+        - name: linux-amd64
+          os: linux
+          arch: amd64
+          runs-on: ubuntu-latest
+        - name: linux-arm64
+          os: linux
+          arch: arm64
+          runs-on: ubuntu-24.04-arm
+        - name: windows-amd64
+          os: windows
+          arch: amd64
+          runs-on: windows-latest
+        - name: macos-arm64
+          os: macos
+          arch: arm64
+          runs-on: macos-14
+    steps:
+    - name: Check Out
+      uses: actions/checkout@v4
+    - name: Set Up
+      uses: ./.github/actions/setup-native
+    - name: Build
+      if: matrix.os != 'windows'
+      shell: bash
+      env:
+        MAVEN_OPTS: ""
+      run: ./mvnw -pl spring-javaformat-cli -am -Pnative package --batch-mode --no-transfer-progress --update-snapshots
+    - name: Build
+      if: matrix.os == 'windows'
+      shell: pwsh
+      env:
+        MAVEN_OPTS: ""
+      run: .\mvnw.cmd -pl spring-javaformat-cli -am -Pnative package --batch-mode --no-transfer-progress --update-snapshots
+    - name: Prepare Artifact
+      shell: bash
+      run: |
+        binary="spring-javaformat-cli/target/spring-javaformat-cli"
+        extension=""
+        if [[ "${{ matrix.os }}" == "windows" ]]; then
+          binary="${binary}.exe"
+          extension=".exe"
+        fi
+        release_name="spring-javaformat-${{ matrix.os }}-${{ matrix.arch }}${extension}"
+        mkdir -p native-artifacts
+        cp "${binary}" "native-artifacts/${release_name}"
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: spring-javaformat-${{ matrix.os }}-${{ matrix.arch }}
+        path: native-artifacts/*

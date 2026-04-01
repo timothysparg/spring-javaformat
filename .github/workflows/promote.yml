@@ -36,6 +36,7 @@ jobs:
     - name: Check Out
       uses: actions/checkout@v4
     - name: Set Up JFrog CLI
+      if: ${{ github.repository == 'spring-io/spring-javaformat' }}
       uses: jfrog/setup-jfrog-cli@ff5cb544114ffc152db9cea1cd3d5978d5074946 # v4.5.11
       env:
         JF_ENV_SPRING: ${{ secrets.JF_ARTIFACTORY_SPRING }}
@@ -50,10 +51,10 @@ jobs:
         fi
         echo "status-code=${status_code}" >> $GITHUB_OUTPUT
     - name: Download Release Artifacts
-      if: ${{ steps.check-sync-status.outputs.status-code == '404' }}
+      if: ${{ github.repository == 'spring-io/spring-javaformat' && steps.check-sync-status.outputs.status-code == '404' }}
       run: jf rt download --spec ./.github/artifacts.spec --spec-vars 'buildName=${{ format('spring-javaformat-{0}', inputs.version) }};buildNumber=${{ inputs.build-number }}'
     - name: Sync to Maven Central
-      if: ${{ steps.check-sync-status.outputs.status-code == '404' }}
+      if: ${{ github.repository == 'spring-io/spring-javaformat' && steps.check-sync-status.outputs.status-code == '404' }}
       uses: spring-io/nexus-sync-action@v0.0.1
       with:
         username: ${{ secrets.OSSRH_S01_TOKEN_USERNAME }}
@@ -65,7 +66,7 @@ jobs:
         release: true
         generate-checksums: true
     - name: Await Maven Central Sync
-      if: ${{ steps.check-sync-status.outputs.status-code == '404' }}
+      if: ${{ github.repository == 'spring-io/spring-javaformat' && steps.check-sync-status.outputs.status-code == '404' }}
       run: |
         url=${{ format('https://repo.maven.apache.org/maven2/io/spring/javaformat/spring-javaformat/{0}/spring-javaformat-{0}.pom', inputs.version) }}
         echo "Waiting for $url"
@@ -76,17 +77,18 @@ jobs:
         done
         echo "$url is available"
     - name: Promote Build
-      if: ${{ steps.check-sync-status.outputs.status-code == '404' }}
+      if: ${{ github.repository == 'spring-io/spring-javaformat' && steps.check-sync-status.outputs.status-code == '404' }}
       run: jfrog rt build-promote ${{ format('spring-javaformat-{0}', inputs.version)}} ${{ inputs.build-number }} libs-release-local
     - name: Publish Eclipse Update Site
+      if: ${{ github.repository == 'spring-io/spring-javaformat' }}
       uses: ./.github/actions/publish-eclipse-update-site
       with:
         version: ${{ inputs.version }}
         build-number: ${{ inputs.build-number }}
         artifactory-username: ${{ secrets.ARTIFACTORY_USERNAME }}
         artifactory-password: ${{ secrets.ARTIFACTORY_PASSWORD }}
-    - name: Create GitHub Release
+    - name: Publish GitHub Release
       uses: ./.github/actions/create-github-release
       with:
         milestone: ${{ inputs.version }}
-        token: ${{ secrets.GH_ACTIONS_REPO_TOKEN }}
+        token: ${{ secrets.GH_ACTIONS_REPO_TOKEN || github.token }}
